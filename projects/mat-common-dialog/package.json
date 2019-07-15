@@ -1,0 +1,12 @@
+{
+  "name": "mat-common-dialog",
+  "version": "0.0.1",
+  "peerDependencies": {
+  	"@angular/animations": "^8.0.0",
+  	"@angular/cdk": "^8.0.2",
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3",
+    "@angular/material": "^8.0.2",
+    "rxjs": "^6.4.0"
+  }
+}
