@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "mat-common-dialog": [
+        "dist/mat-common-dialog"
+      ],
+      "mat-common-dialog/*": [
+        "dist/mat-common-dialog/*"
+      ]
+    }
   }
 }
