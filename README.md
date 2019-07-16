@@ -1,29 +1,104 @@
 # MatCommonDialog
 
-This library provides two component for MatDialog a notification component and a confirm component.
+This library provides two component for MatDialog for **Angular 8** and above, a notification component and a confirm component.
 
 ## Screenshots
 ![Notification](/images/notification.png)
 ![Confirmation](/images/confirm_default.png)
 
 
-## Code scaffolding
+## Requirement
 
-Run `ng generate component component-name --project mat-common-dialog` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project mat-common-dialog`.
-> Note: Don't forget to add `--project mat-common-dialog` or else it will be added to the default project in your `angular.json` file. 
+You should use this library if and only if you are using `Angular material component` along with Angular.
+ 
 
-## Build
+## Installation
 
-Run `ng build mat-common-dialog` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### For existing angular project.
 
-## Publishing
+1. Open terminal or cmd and add angular materila component skip if already added.
 
-After building your library with `ng build mat-common-dialog`, go to the dist folder `cd dist/mat-common-dialog` and run `npm publish`.
+>ng add @angular/material
+>
 
-## Running unit tests
+2. install this library
+>npm i @aptof/mat-common-dialog
 
-Run `ng test mat-common-dialog` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+#### For non-existing angular projcet
+1. Open terminal or cmd and Creat a new Angular project
+>ng new example-project
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+>cd example-project
+
+2. Now follow the step of `'Existing angular project'`
+
+## Usages
+
+**app.module.ts**
+```javascript
+...
+import { AptofMatCommonDialogModule } from '@aptof/mat-common-dialog';
+
+@NgModule({
+  ...
+  imports: [
+    ...
+    AptofMatCommonDialogModule,
+  ],
+  ...
+})
+```
+
+**example.component.ts**
+```javascript
+...
+import {AptofMatCommonDialogService} from '@aptof/mat-common-dialog';
+
+@Component({
+  ...
+})
+export class ExampleComponent {
+  constructor(private matSrvice: AptofMatCommonDialogService){}
+
+  notifyClick(){
+    this.matSrvice.notify("You are notified for your fault. Be careful next time").subscribe((result)=>console.log(result));
+  }
+
+  confirmClick(){
+    this.matSrvice.confirm("Are you sure to logout?", 'Confirm?').subscribe((result)=>console.log(result));
+  }
+}
+```
+>bind **notifyClick** and **confirmClick** with a button. For an example see the source app.component repository.
+
+## API
+
+The **ApotfMatCommonDialogService** exposes two funtions
+
+#### notify
+```javascript
+notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<any>
+```
+`message: The message the dialog.`
+
+`title: The title of the dialog.`
+
+`buttonText: The text of the button.`
+
+`**return:** notify will always return the value of buttonText.`
+
+#### confirm
+```javascript
+confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<any>
+```
+`message: The message the dialog.`
+
+`title: The title of the dialog.`
+
+`warnYes: By default 'No' button will be warn color but if you provide warnYes to true the 'Yes' button will be warn color.`
+
+>**Note**: In confirm there is no buttonText as it always shows Yes No button.
+
+`**return**: It will return 'Yes' if you click 'Yes' button and 'No' if you click 'No' button.`
+>**Note**: The material dialog can be closed by clicking outside of the dialog in that case `confirm` will return 'No'.

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatCommonDialogService } from 'mat-common-dialog';
+import { AptofMatCommonDialogService } from 'mat-common-dialog';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { MatCommonDialogService } from 'mat-common-dialog';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private matSrvice: MatCommonDialogService){}
+  constructor(private matSrvice: AptofMatCommonDialogService){}
 
   notify(){
     this.matSrvice.notify("You are notified for your fault. Be careful next time").subscribe((resutl)=>console.log(resutl));
