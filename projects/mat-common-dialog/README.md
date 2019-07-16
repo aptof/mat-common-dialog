@@ -1,6 +1,11 @@
 # MatCommonDialog
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+This is a supporting library for Angular Material components. It provides two component for MatDialog a notification component and a confirm component.
+
+## Screenshots
+![Notification](/images/notification.png)
+![Confirmation](/images/confirm_default.png)
+
 
 ## Code scaffolding
 

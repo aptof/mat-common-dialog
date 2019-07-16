@@ -22,10 +22,10 @@ export class MatCommonDialogService {
     return dialogRef.beforeClose().pipe(mapTo(buttonText));
   }
 
-  confirm(message: string, title:string = 'Confirm'):Observable<any>{
+  confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<any>{
     const dialogRef = this.dialog.open(ConfirmComponent, {
       width: WIDTH,
-      data: {message, title}
+      data: {message, title, warnYes}
     });
 
     return dialogRef.beforeClose().pipe(map(result => result == 'Yes'? 'Yes': 'No'));

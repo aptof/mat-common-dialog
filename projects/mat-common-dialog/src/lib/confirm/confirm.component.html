@@ -3,6 +3,6 @@
     {{data.message}}
 </div>
 <div mat-dialog-actions>
-    <button mat-raised-button color="primary" mat-dialog-close="Yes" cdkFocusInitial>Yes</button>
-    <button mat-raised-button color="warn" mat-dialog-close="No" cdkFocusInitial>No</button>
+    <button mat-raised-button [color]="data.warnYes? 'warn': 'primary'" mat-dialog-close="Yes" cdkFocusInitial>Yes</button>
+    <button mat-raised-button [color]="data.warnYes? 'primary': 'warn'" mat-dialog-close="No" cdkFocusInitial>No</button>
 </div>

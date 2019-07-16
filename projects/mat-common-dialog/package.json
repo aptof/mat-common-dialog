@@ -1,21 +1,13 @@
 {
   "name": "@aptof/mat-common-dialog",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "peerDependencies": {
     "@angular/animations": "^8.0.0",
-    "@angular/cdk": "^8.0.2",
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3",
-    "@angular/material": "^8.0.2",
-    "rxjs": "^6.4.0"
-  },
-  "dependencies": {
-    "@angular/animations": "^8.0.0",
     "@angular/cdk": "^8.0.2",
-    "@angular/common": "^8.0.3",
-    "@angular/core": "^8.0.3",
-    "@angular/material": "^8.0.2",
-    "rxjs": "^6.4.0"
+    "rxjs": "^6.4.0",
+    "@angular/material": "^8.0.2"
   },
   "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.",
   "main": "karma.conf.js",
