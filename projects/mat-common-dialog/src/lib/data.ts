@@ -1,13 +1,13 @@
-export interface NotifyData {
+export interface AptofNotifyData {
     message: string;
     title: string;
     buttonText: string
 };
 
-export interface ConfirmData{
+export interface AptofConfirmData{
     message: string;
     title: string;
     warnYes: boolean;
 }
 
-export const WIDTH = '350px';
+export const APTOF_WIDTH = '350px';

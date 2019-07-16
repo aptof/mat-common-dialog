@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NotifyComponent } from './notify/notify.component';
-import { WIDTH } from './data';
+import { AptofNotifyComponent } from './notify/aptofnotify.component';
+import { APTOF_WIDTH } from './data';
 import { Observable } from 'rxjs';
 import { mapTo, map } from 'rxjs/operators';
-import { ConfirmComponent } from './confirm/confirm.component';
+import { AptofConfirmComponent } from './confirm/aptofconfirm.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MatCommonDialogService {
+export class AptofMatCommonDialogService {
 
   constructor(private dialog: MatDialog) { }
   
   notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<any>{
-    const dialogRef = this.dialog.open(NotifyComponent, {
-      width: WIDTH,
+    const dialogRef = this.dialog.open(AptofNotifyComponent, {
+      width: APTOF_WIDTH,
       data: {message, title, buttonText}
     });
 
@@ -23,8 +23,8 @@ export class MatCommonDialogService {
   }
 
   confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<any>{
-    const dialogRef = this.dialog.open(ConfirmComponent, {
-      width: WIDTH,
+    const dialogRef = this.dialog.open(AptofConfirmComponent, {
+      width: APTOF_WIDTH,
       data: {message, title, warnYes}
     });
 

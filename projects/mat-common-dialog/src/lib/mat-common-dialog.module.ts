@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { NotifyComponent } from './notify/notify.component';
+import { AptofNotifyComponent } from './notify/aptofnotify.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ConfirmComponent } from './confirm/confirm.component';
+import { AptofConfirmComponent } from './confirm/aptofconfirm.component';
 
 const COMPONENTS = [
-  NotifyComponent,
-  ConfirmComponent
+  AptofNotifyComponent,
+  AptofConfirmComponent
 ]
 
 @NgModule({
@@ -18,4 +18,4 @@ const COMPONENTS = [
   exports: [],
   entryComponents: [...COMPONENTS]
 })
-export class MatCommonDialogModule { }
+export class AptofMatCommonDialogModule { }

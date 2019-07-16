@@ -1,26 +1,28 @@
-# MatCommonDialogApp
+# MatCommonDialog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+This library provides two component for MatDialog a notification component and a confirm component.
 
-## Development server
+## Screenshots
+![Notification](/images/notification.png)
+![Confirmation](/images/confirm_default.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name --project mat-common-dialog` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project mat-common-dialog`.
+> Note: Don't forget to add `--project mat-common-dialog` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build mat-common-dialog` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Publishing
+
+After building your library with `ng build mat-common-dialog`, go to the dist folder `cd dist/mat-common-dialog` and run `npm publish`.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng test mat-common-dialog` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Further help
 

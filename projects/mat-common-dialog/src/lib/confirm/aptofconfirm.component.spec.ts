@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotifyComponent } from './notify.component';
+import { AptofConfirmComponent } from './aptofconfirm.component';
 
-describe('NotifyComponent', () => {
-  let component: NotifyComponent;
-  let fixture: ComponentFixture<NotifyComponent>;
+describe('ConfirmComponent', () => {
+  let component: AptofConfirmComponent;
+  let fixture: ComponentFixture<AptofConfirmComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotifyComponent ]
+      declarations: [ AptofConfirmComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotifyComponent);
+    fixture = TestBed.createComponent(AptofConfirmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
