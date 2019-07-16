@@ -31,7 +31,7 @@ You should use this library if and only if you are using `Angular material compo
 
 >cd example-project
 
-2. Now follow the step of `'Existing angular project'`
+2. Now follow the steps of `'Existing angular project'`
 
 ## Usages
 
@@ -70,7 +70,7 @@ export class ExampleComponent {
   }
 }
 ```
->bind **notifyClick** and **confirmClick** with a button. For an example see the source app.component repository.
+>bind **notifyClick** and **confirmClick** with a button. For an example see the app.component in the repository.
 
 ## API
 
@@ -80,25 +80,26 @@ The **ApotfMatCommonDialogService** exposes two funtions
 ```javascript
 notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<any>
 ```
-`message: The message the dialog.`
+`message: The message of the dialog.`
 
 `title: The title of the dialog.`
 
 `buttonText: The text of the button.`
 
-`**return:** notify will always return the value of buttonText.`
+`return: notify will always return the value of buttonText.`
 
 #### confirm
 ```javascript
 confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<any>
 ```
-`message: The message the dialog.`
+`message: The message of the dialog.`
 
 `title: The title of the dialog.`
 
 `warnYes: By default 'No' button will be warn color but if you provide warnYes to true the 'Yes' button will be warn color.`
+![Confirmation_Alternate](/images/confirm_alternate.png)
 
 >**Note**: In confirm there is no buttonText as it always shows Yes No button.
 
-`**return**: It will return 'Yes' if you click 'Yes' button and 'No' if you click 'No' button.`
+`return: It will return 'Yes' if you click 'Yes' button and 'No' if you click 'No' button.`
 >**Note**: The material dialog can be closed by clicking outside of the dialog in that case `confirm` will return 'No'.
