@@ -1,6 +1,6 @@
 {
   "name": "@aptof/mat-common-dialog",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/animations": "^8.0.0",
     "@angular/common": "^8.0.3",
@@ -9,7 +9,7 @@
     "rxjs": "^6.4.0",
     "@angular/material": "^8.0.2"
   },
-  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.",
+  "description": "Show Notification and Confirmation dialog with ease usig angular materil.",
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -50,7 +50,7 @@ import { AptofMatCommonDialogModule } from '@aptof/mat-common-dialog';
 })
 ```
 
-**example.component.ts**
+**app.component.ts**
 ```javascript
 ...
 import {AptofMatCommonDialogService} from '@aptof/mat-common-dialog';
@@ -61,16 +61,23 @@ import {AptofMatCommonDialogService} from '@aptof/mat-common-dialog';
 export class ExampleComponent {
   constructor(private matSrvice: AptofMatCommonDialogService){}
 
-  notifyClick(){
+  notifyClicked(){
     this.matSrvice.notify("You are notified for your fault. Be careful next time").subscribe((result)=>console.log(result));
   }
 
-  confirmClick(){
+  confirmClicked(){
     this.matSrvice.confirm("Are you sure to logout?", 'Confirm?').subscribe((result)=>console.log(result));
   }
 }
 ```
->bind **notifyClick** and **confirmClick** with a button. For an example see the app.component in the repository.
+**app.component.html**
+```html
+<div>
+  <button mat-button (click)="notifyClicked()">Notify</button>
+  <button mat-button (click)="confirmClicked()">Confirm</button>
+</div>
+```
+
 
 ## API
 
