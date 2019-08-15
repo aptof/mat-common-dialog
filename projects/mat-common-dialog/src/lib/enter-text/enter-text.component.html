@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{data}}</h1>
+<div mat-dialog-content>
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput [placeholder]="data" [formControl]="text" required>
+    <mat-error>Required</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" [mat-dialog-close]="text.value" cdkFocusInitial [disabled]="text.errors">Ok</button>
+  <button mat-raised-button color="warn" mat-dialog-close="" cdkFocusInitial>Cancel</button>
+</div>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotifyComponent } from './aptofnotify.component';
+import { AptofNotifyComponent } from './aptofnotify.component';
 
 describe('NotifyComponent', () => {
-  let component: NotifyComponent;
-  let fixture: ComponentFixture<NotifyComponent>;
+  let component: AptofNotifyComponent;
+  let fixture: ComponentFixture<AptofNotifyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotifyComponent ]
+      declarations: [ AptofNotifyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotifyComponent);
+    fixture = TestBed.createComponent(AptofNotifyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

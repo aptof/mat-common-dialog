@@ -7,13 +7,20 @@ import { AptofMatCommonDialogService } from 'mat-common-dialog';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  message = 'Result will appear here';
+
   constructor(private matSrvice: AptofMatCommonDialogService){}
 
   notify(){
-    this.matSrvice.notify("You are notified for your fault. Be careful next time").subscribe((resutl)=>console.log(resutl));
+    this.matSrvice.notify("You are notified for your fault. Be careful next time").subscribe((result)=>this.message = result);
   }
 
   confirm(){
-    this.matSrvice.confirm("Are you sure to logout?", 'Confirm?', true).subscribe((result)=>console.log(result));
+    this.matSrvice.confirm("Are you sure to logout?", 'Confirm?', true).subscribe((result)=>this.message = result);
+  }
+
+  enterText(){
+    this.matSrvice.enterText('Enter your name').subscribe((result)=>this.message = result); 
   }
 }
