@@ -9,7 +9,7 @@
     "rxjs": "^6.4.0",
     "@angular/material": "^8.0.2"
   },
-  "description": "Show Notification and Confirmation dialog with ease usig angular materil.",
+  "description": "Show Notification and Confirmation dialog with ease using angular materil.",
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
