@@ -42,7 +42,7 @@ export class AptofMatCommonDialogService {
     return dialogRef.beforeClose().pipe(map((result) => result? result: ''));
   }
 
-  enterNumber(title:string = "Enter number", min:number = 1, max:number = 100):Observable<any>{
+  enterNumber(title:string = "Enter number", min:number = -1, max:number = -1):Observable<any>{
     const dialogRef = this.dialog.open(AptofEnterNumberComponent, {
       width: APTOF_WIDTH,
       data: {title, min, max}

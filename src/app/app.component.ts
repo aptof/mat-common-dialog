@@ -25,6 +25,6 @@ export class AppComponent {
   }
 
   enterNumber(){
-    this.matSrvice.enterNumber('Enter your mobile', 6000000000,9999999999).subscribe((result)=>this.message = result); 
+    this.matSrvice.enterNumber('Enter your mobile', 0, 500).subscribe((result)=>this.message = result); 
   }
 }

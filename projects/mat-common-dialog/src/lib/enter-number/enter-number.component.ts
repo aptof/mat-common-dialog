@@ -11,12 +11,10 @@ import { AptofNumberData } from '../data';
 export class AptofEnterNumberComponent implements OnInit {
 
   text = new FormControl('', [
-  	  Validators.required,
-  	  Validators.min(this.data.min),
-  	  Validators.max(this.data.max)
+      Validators.required,
+      Validators.min(this.data.min),
+      Validators.max(this.data.max),
     ]);
-
-  
 
   constructor(public dialogRef: MatDialogRef<AptofEnterNumberComponent>, @Inject(MAT_DIALOG_DATA) public data: AptofNumberData) { }
 

@@ -109,3 +109,14 @@ confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Obse
 
 `return: It will return 'Yes' if you click 'Yes' button and 'No' if you click 'No' button.`
 >**Note**: The material dialog can be closed by clicking outside of the dialog in that case `confirm` will return 'No'.
+
+
+#### enterText
+```typescript
+enterText(title:string = "Enter text"):Observable<any>
+```
+
+#### enterNumber
+```typescript
+enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000):Observable<any>
+```
