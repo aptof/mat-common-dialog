@@ -9,7 +9,9 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class AptofEnterTextComponent implements OnInit {
 
-  text = new FormControl('', Validators.required);
+  text = new FormControl('', [
+  	  Validators.required
+    ]);
 
   
 

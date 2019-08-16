@@ -10,4 +10,10 @@ export interface AptofConfirmData{
     warnYes: boolean;
 }
 
+export interface AptofNumberData{
+	title: string;
+	min: number;
+	max: number;
+}
+
 export const APTOF_WIDTH = '350px';

@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { mapTo, map } from 'rxjs/operators';
 import { AptofConfirmComponent } from './confirm/aptofconfirm.component';
 import { AptofEnterTextComponent} from './enter-text/enter-text.component';
+import { AptofEnterNumberComponent } from './enter-number/enter-number.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +38,14 @@ export class AptofMatCommonDialogService {
     const dialogRef = this.dialog.open(AptofEnterTextComponent, {
       width: APTOF_WIDTH,
       data: title
+    });
+    return dialogRef.beforeClose().pipe(map((result) => result? result: ''));
+  }
+
+  enterNumber(title:string = "Enter number", min:number = 1, max:number = 100):Observable<any>{
+    const dialogRef = this.dialog.open(AptofEnterNumberComponent, {
+      width: APTOF_WIDTH,
+      data: {title, min, max}
     });
     return dialogRef.beforeClose().pipe(map((result) => result? result: ''));
   }

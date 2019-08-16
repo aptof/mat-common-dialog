@@ -9,11 +9,13 @@ import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AptofConfirmComponent } from './confirm/aptofconfirm.component';
 import { AptofEnterTextComponent } from './enter-text/enter-text.component';
+import { AptofEnterNumberComponent } from './enter-number/enter-number.component';
 
 const COMPONENTS = [
   AptofNotifyComponent,
   AptofConfirmComponent,
-  AptofEnterTextComponent
+  AptofEnterTextComponent,
+  AptofEnterNumberComponent
 ]
 
 @NgModule({
