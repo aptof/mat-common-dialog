@@ -7,6 +7,8 @@ import { mapTo, map } from 'rxjs/operators';
 import { AptofConfirmComponent } from './confirm/aptofconfirm.component';
 import { AptofEnterTextComponent} from './enter-text/enter-text.component';
 import { AptofEnterNumberComponent } from './enter-number/enter-number.component';
+import { AptofChooseOneComponent } from './choose-one/choose-one.component';
+import { AptofChooseOneOption } from './public-data';
 
 
 @Injectable({
@@ -22,7 +24,7 @@ export class AptofMatCommonDialogService {
       data: {message, title, buttonText}
     });
 
-    return dialogRef.beforeClose().pipe(mapTo(buttonText));
+    return dialogRef.beforeClose().pipe(mapTo(true));
   }
 
   confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<any>{
@@ -48,5 +50,14 @@ export class AptofMatCommonDialogService {
       data: {title, min, max}
     });
     return dialogRef.beforeClose().pipe(map((result) => result? result: ''));
+  }
+
+  chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = []):Observable<any>{
+    const dialogRef = this.dialog.open(AptofChooseOneComponent, {
+      width: APTOF_WIDTH,
+      data: {title, options}
+    });
+
+    return dialogRef.beforeClose().pipe(map((result)=>result? result: ''));
   }
 }

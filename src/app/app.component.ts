@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AptofMatCommonDialogService } from 'mat-common-dialog';
+import { AptofMatCommonDialogService, AptofChooseOneOption } from 'mat-common-dialog';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +10,30 @@ export class AppComponent {
 
   message = 'Result will appear here';
 
-  constructor(private matSrvice: AptofMatCommonDialogService){}
+  constructor(private matService: AptofMatCommonDialogService){}
 
   notify(){
-    this.matSrvice.notify("You are notified for your fault. Be careful next time").subscribe((result)=>this.message = result);
+    this.matService.notify("You are notified for your fault. Be careful next time").subscribe((result)=>this.message = result);
   }
 
   confirm(){
-    this.matSrvice.confirm("Are you sure to logout?", 'Confirm?', true).subscribe((result)=>this.message = result);
+    this.matService.confirm("Are you sure to logout?", 'Confirm?', true).subscribe((result)=>this.message = result);
   }
 
   enterText(){
-    this.matSrvice.enterText('Enter your name').subscribe((result)=>this.message = result); 
+    this.matService.enterText('Enter your name').subscribe((result)=>this.message = result); 
   }
 
   enterNumber(){
-    this.matSrvice.enterNumber('Enter your mobile', 0, 500).subscribe((result)=>this.message = result); 
+    this.matService.enterNumber('Enter your mobile', 0, 500).subscribe((result)=>this.message = result); 
+  }
+
+  chooseOne(){
+    let options: AptofChooseOneOption[] = [
+      {value: 10001, face: '10001 - Anupam Hazra'},
+      {value: 10005, face: '10005 - Bikas Prasad'},
+      {value: 10007, face: '10007 - Nirmal Mondal'},
+    ]
+    this.matService.chooseOne('Choose employee', options).subscribe((result)=>this.message = result);
   }
 }

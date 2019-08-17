@@ -3,5 +3,5 @@
  */
 
 export * from './lib/mat-common-dialog.service';
-//export * from './lib/data';
+export * from './lib/public-data';
 export * from './lib/mat-common-dialog.module';

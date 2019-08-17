@@ -12,9 +12,7 @@ export class AptofEnterTextComponent implements OnInit {
   text = new FormControl('', [
   	  Validators.required
     ]);
-
-  
-
+    
   constructor(public dialogRef: MatDialogRef<AptofEnterTextComponent>, @Inject(MAT_DIALOG_DATA) public data: string) { }
 
   ngOnInit() {

@@ -1,3 +1,5 @@
+import { AptofChooseOneOption } from './public-data';
+
 export interface AptofNotifyData {
     message: string;
     title: string;
@@ -14,6 +16,11 @@ export interface AptofNumberData{
 	title: string;
 	min: number;
 	max: number;
+}
+
+export interface AptofChooseOneData{
+    title: string;
+    options: AptofChooseOneOption[];
 }
 
 export const APTOF_WIDTH = '350px';

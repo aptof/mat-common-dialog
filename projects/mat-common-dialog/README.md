@@ -92,7 +92,7 @@ notify(message: string, title:string = 'Notification', buttonText:string = 'Ok')
 
 `buttonText: The text of the button.`
 
-`return: notify will always return the value of buttonText.`
+`return: notify will always return true`
 
 #### confirm
 ```javascript
@@ -119,4 +119,14 @@ enterText(title:string = "Enter text"):Observable<any>
 #### enterNumber
 ```typescript
 enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000):Observable<any>
+```
+
+#### enterNumber
+```typescript
+chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = []):Observable<any>
+
+interface AptofChooseOneOption {
+  value: any;  //this will be returned
+  face: string; // this will be shown
+}
 ```
