@@ -34,6 +34,6 @@ export class AppComponent {
       {value: 10005, face: '10005 - Bikas Prasad'},
       {value: 10007, face: '10007 - Nirmal Mondal'},
     ]
-    this.matService.chooseOne('Choose employee', options).subscribe((result)=>this.message = result);
+    this.matService.selectOne('Choose employee', options, 10005).subscribe((result)=>this.message = result);
   }
 }

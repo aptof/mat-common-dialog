@@ -15,7 +15,7 @@ selectedValue;
 constructor(public dialogRef: MatDialogRef<AptofChooseOneComponent>, @Inject(MAT_DIALOG_DATA) public data: AptofChooseOneData) { }
 
 ngOnInit() {
-  this.selectedValue = this.data.selectedOption.value;
+  this.selectedValue = this.data.selectedValue;
 }
 
 }

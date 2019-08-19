@@ -27,7 +27,7 @@ export interface AptofNumberData{
 export interface AptofChooseOneData{
     title: string;
     options: AptofChooseOneOption[];
-    selectedOption: AptofChooseOneOption;
+    selectedValue: AptofChooseOneOption;
 }
 
 export const APTOF_WIDTH = '350px';

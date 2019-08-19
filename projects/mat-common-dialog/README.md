@@ -6,8 +6,8 @@ This library provides common reusable components for MatDialog for **Angular 8**
 ![Notification](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/notification.png)
 ![Confirmation](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/confirm_default.png)
 ![Enter text](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/enter_text.png)
-![Enter number](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/confirm_default.png)
-![Select one](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/select_one.png)
+![Enter number](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/enter_number.png)
+![Select one](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/choose_one.png)
 
 
 ## Requirement
@@ -39,9 +39,14 @@ You should use this library if and only if you are using `Angular material compo
 ## Release Notes
 
 #### V 0.2.2
-1. Added prefilledText in enterText
-2. Added prefilledNumber in enterNumber
-3. Added selectedOption in chooseOne
+**Breaking Changes**
+1. chooseOne renamed to selectOne
+
+**Non-breaking changes**
+
+2. Added prefilledText in enterText
+3. Added prefilledNumber in enterNumber
+4. Added selectedOption in chooseOne
 
 #### V 0.2.1
 1. notify now return only true insted of buttonText
@@ -147,7 +152,7 @@ enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000
 
 #### chooseOne
 ```typescript
-chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = [], selectedOption:AptofChooseOneOption = null):Observable<any>
+selectOne(title:string = 'Choose One', options: AptofChooseOneOption[] = [], selectedValue:any = ''):Observable<any>
 
 interface AptofChooseOneOption {
   value: any;  //this will be returned

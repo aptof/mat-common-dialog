@@ -52,10 +52,10 @@ export class AptofMatCommonDialogService {
     return dialogRef.beforeClose().pipe(map((result) => result? result: ''));
   }
 
-  chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = [], selectedOption:AptofChooseOneOption = null):Observable<any>{
+  selectOne(title:string = 'Select one', options: AptofChooseOneOption[] = [], selectedValue:any = ''):Observable<any>{
     const dialogRef = this.dialog.open(AptofChooseOneComponent, {
       width: APTOF_WIDTH,
-      data: {title, options, selectedOption}
+      data: {title, options, selectedValue}
     });
 
     return dialogRef.beforeClose().pipe(map((result)=>result? result: ''));
