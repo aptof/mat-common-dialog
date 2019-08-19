@@ -1,6 +1,6 @@
 # MatCommonDialog
 
-This library provides two component for MatDialog for **Angular 8** and above, a notification component and a confirm component.
+This library provides common reusable components for MatDialog for **Angular 8** and above, a notification component and a confirm component.
 
 ## Screenshots
 ![Notification](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/notification.png)
@@ -121,7 +121,7 @@ enterText(title:string = "Enter text"):Observable<any>
 enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000):Observable<any>
 ```
 
-#### enterNumber
+#### chooseOne
 ```typescript
 chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = []):Observable<any>
 
