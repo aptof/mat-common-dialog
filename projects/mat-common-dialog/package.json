@@ -1,6 +1,6 @@
 {
   "name": "@aptof/mat-common-dialog",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "peerDependencies": {
     "@angular/animations": "^8.0.0",
     "@angular/common": "^8.0.3",

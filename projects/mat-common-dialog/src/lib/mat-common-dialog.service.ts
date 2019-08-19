@@ -18,7 +18,7 @@ export class AptofMatCommonDialogService {
 
   constructor(private dialog: MatDialog) { }
   
-  notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<any>{
+  notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<boolean>{
     const dialogRef = this.dialog.open(AptofNotifyComponent, {
       width: APTOF_WIDTH,
       data: {message, title, buttonText}
@@ -27,13 +27,13 @@ export class AptofMatCommonDialogService {
     return dialogRef.beforeClose().pipe(mapTo(true));
   }
 
-  confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<any>{
+  confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<boolean>{
     const dialogRef = this.dialog.open(AptofConfirmComponent, {
       width: APTOF_WIDTH,
       data: {message, title, warnYes}
     });
 
-    return dialogRef.beforeClose().pipe(map(result => result == 'Yes'? 'Yes': 'No'));
+    return dialogRef.beforeClose().pipe(map(result => result == 'Yes'? true: false));
   }
 
   enterText(title:string = "Enter text"):Observable<any>{

@@ -84,7 +84,7 @@ The **ApotfMatCommonDialogService** exposes two funtions
 
 #### notify
 ```javascript
-notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<any>
+notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<boolean>
 ```
 `message: The message of the dialog.`
 
@@ -96,7 +96,7 @@ notify(message: string, title:string = 'Notification', buttonText:string = 'Ok')
 
 #### confirm
 ```javascript
-confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<any>
+confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<boolean>
 ```
 `message: The message of the dialog.`
 
@@ -105,9 +105,9 @@ confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Obse
 `warnYes: By default 'No' button will be warn color but if you provide warnYes to true the 'Yes' button will be warn color.`
 ![Confirmation_Alternate](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/confirm_alternate.png)
 
->**Note**: In confirm there is no buttonText as it always shows Yes No button.
+>**Note**: In confirm there is no buttonText as it always shows Yes and No button.
 
-`return: It will return 'Yes' if you click 'Yes' button and 'No' if you click 'No' button.`
+`return: It will return true if you click 'Yes' button and false if you click 'No' button.`
 >**Note**: The material dialog can be closed by clicking outside of the dialog in that case `confirm` will return 'No'.
 
 
