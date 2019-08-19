@@ -5,6 +5,9 @@ This library provides common reusable components for MatDialog for **Angular 8**
 ## Screenshots
 ![Notification](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/notification.png)
 ![Confirmation](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/confirm_default.png)
+![Enter text](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/enter_text.png)
+![Enter number](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/confirm_default.png)
+![Select one](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/select_one.png)
 
 
 ## Requirement
@@ -33,10 +36,31 @@ You should use this library if and only if you are using `Angular material compo
 
 2. Now follow the steps of `'Existing angular project'`
 
+## Release Notes
+
+#### V 0.2.2
+1. Added prefilledText in enterText
+2. Added prefilledNumber in enterNumber
+3. Added selectedOption in chooseOne
+
+#### V 0.2.1
+1. notify now return only true insted of buttonText
+2. confirm now return true or false instead of 'Yes' or 'No'
+
+#### V 0.2.0
+1. Added an new component named chooseOne used for selection a option.
+
+#### V 0.1.1
+1. Minor bug fixes
+
+#### V 0.1.0
+1. Added new component enterText
+2. Added new component enterNumber
+
 ## Usages
 
 **app.module.ts**
-```javascript
+```typescript
 ...
 import { AptofMatCommonDialogModule } from '@aptof/mat-common-dialog';
 
@@ -51,7 +75,7 @@ import { AptofMatCommonDialogModule } from '@aptof/mat-common-dialog';
 ```
 
 **app.component.ts**
-```javascript
+```typescript
 ...
 import {AptofMatCommonDialogService} from '@aptof/mat-common-dialog';
 
@@ -83,7 +107,7 @@ export class ExampleComponent {
 The **ApotfMatCommonDialogService** exposes two funtions
 
 #### notify
-```javascript
+```typescript
 notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<boolean>
 ```
 `message: The message of the dialog.`
@@ -95,7 +119,7 @@ notify(message: string, title:string = 'Notification', buttonText:string = 'Ok')
 `return: notify will always return true`
 
 #### confirm
-```javascript
+```typescript
 confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<boolean>
 ```
 `message: The message of the dialog.`
@@ -113,17 +137,17 @@ confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Obse
 
 #### enterText
 ```typescript
-enterText(title:string = "Enter text"):Observable<any>
+enterText(title:string = "Enter text", prefilledText: string = ''):Observable<string>
 ```
 
 #### enterNumber
 ```typescript
-enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000):Observable<any>
+enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000, prefilledNumber: number = 0):Observable<number>
 ```
 
 #### chooseOne
 ```typescript
-chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = []):Observable<any>
+chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = [], selectedOption:AptofChooseOneOption = null):Observable<any>
 
 interface AptofChooseOneOption {
   value: any;  //this will be returned

@@ -10,7 +10,7 @@ import { AptofNumberData } from '../data';
 })
 export class AptofEnterNumberComponent implements OnInit {
 
-  text = new FormControl('', [
+  text = new FormControl(this.data.prefilledNumber, [
       Validators.required,
       Validators.min(this.data.min),
       Validators.max(this.data.max),

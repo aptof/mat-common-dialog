@@ -13,19 +13,19 @@ export class AppComponent {
   constructor(private matService: AptofMatCommonDialogService){}
 
   notify(){
-    this.matService.notify("You are notified for your fault. Be careful next time").subscribe((result)=>this.message = result);
+    this.matService.notify("You are notified for your fault. Be careful next time").subscribe((result)=>this.message = result.toString());
   }
 
   confirm(){
-    this.matService.confirm("Are you sure to logout?", 'Confirm?', true).subscribe((result)=>this.message = result);
+    this.matService.confirm("Are you sure to logout?", 'Confirm?', true).subscribe((result)=>this.message = result.toString());
   }
 
   enterText(){
-    this.matService.enterText('Enter your name').subscribe((result)=>this.message = result); 
+    this.matService.enterText('Enter your name', 'John Mallick').subscribe((result)=>this.message = result); 
   }
 
   enterNumber(){
-    this.matService.enterNumber('Enter your mobile', 0, 500).subscribe((result)=>this.message = result); 
+    this.matService.enterNumber('Enter your mobile', 0, 500, 45).subscribe((result)=>this.message = result.toString()); 
   }
 
   chooseOne(){

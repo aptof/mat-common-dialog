@@ -1,7 +1,7 @@
-<h1 mat-dialog-title>{{data}}</h1>
+<h1 mat-dialog-title>{{data.title}}</h1>
 <div mat-dialog-content>
   <mat-form-field style="width: 100%">
-    <input type="text" matInput [placeholder]="data" [formControl]="text" required>
+    <input type="text" matInput [placeholder]="data.title" [formControl]="text" required>
     <mat-error>Required</mat-error>
   </mat-form-field>
 </div>

@@ -36,26 +36,26 @@ export class AptofMatCommonDialogService {
     return dialogRef.beforeClose().pipe(map(result => result == 'Yes'? true: false));
   }
 
-  enterText(title:string = "Enter text"):Observable<any>{
+  enterText(title:string = "Enter text", prefilledText: string = ''):Observable<string>{
     const dialogRef = this.dialog.open(AptofEnterTextComponent, {
       width: APTOF_WIDTH,
-      data: title
+      data: {title, prefilledText}
     });
     return dialogRef.beforeClose().pipe(map((result) => result? result: ''));
   }
 
-  enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000):Observable<any>{
+  enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000, prefilledNumber: number = 0):Observable<number>{
     const dialogRef = this.dialog.open(AptofEnterNumberComponent, {
       width: APTOF_WIDTH,
-      data: {title, min, max}
+      data: {title, min, max, prefilledNumber}
     });
     return dialogRef.beforeClose().pipe(map((result) => result? result: ''));
   }
 
-  chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = []):Observable<any>{
+  chooseOne(title:string = 'Choose One', options: AptofChooseOneOption[] = [], selectedOption:AptofChooseOneOption = null):Observable<any>{
     const dialogRef = this.dialog.open(AptofChooseOneComponent, {
       width: APTOF_WIDTH,
-      data: {title, options}
+      data: {title, options, selectedOption}
     });
 
     return dialogRef.beforeClose().pipe(map((result)=>result? result: ''));
