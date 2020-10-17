@@ -1,3 +1,5 @@
+import { AptofSelectOneOption } from './public-models';
+
 export const APTOF_WIDTH = '350px';
 
 export interface AptofWarnData {
@@ -19,7 +21,13 @@ export interface AptofNumberData {
   preFilledNumber: number;
 }
 
-export interface AptofTextData{
+export interface AptofTextData {
   title: string;
   preFilledText: string;
+}
+
+export interface AptofSelectOneData {
+  title: string;
+  options: AptofSelectOneOption[];
+  selectedValue: AptofSelectOneOption;
 }

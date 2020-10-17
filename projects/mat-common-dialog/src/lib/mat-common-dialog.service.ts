@@ -8,6 +8,8 @@ import { AptofConfirmComponent } from './aptof-confirm/aptof-confirm.component';
 import { AptofYesNoCancelComponent } from './aptof-yes-no-cancel/aptof-yes-no-cancel.component';
 import { AptofEnterNumberComponent } from './aptof-enter-number/aptof-enter-number.component';
 import { AptofEnterTextComponent } from './aptof-enter-text/aptof-enter-text.component';
+import { AptofSelectOneOption } from './public-models';
+import { AptofSelectOneComponent } from './aptof-select-one/aptof-select-one.component';
 
 @Injectable({
   providedIn: 'root',
@@ -68,7 +70,7 @@ export class AptofMatCommonDialogService {
     });
     return dialogRef
       .beforeClosed()
-      .pipe(map((result) => (result ? result : '')));
+      .pipe(map((result) => (result ? result : false)));
   }
 
   enterText(
@@ -81,6 +83,21 @@ export class AptofMatCommonDialogService {
     });
     return dialogRef
       .beforeClosed()
-      .pipe(map((result) => (result ? result : '')));
+      .pipe(map((result) => (result ? result : false)));
+  }
+
+  selectOne(
+    title: string = 'Select one',
+    options: AptofSelectOneOption[] = [],
+    selectedValue: any = ''
+  ): Observable<any> {
+    const dialogRef = this.dialog.open(AptofSelectOneComponent, {
+      width: APTOF_WIDTH,
+      data: { title, options, selectedValue },
+    });
+
+    return dialogRef
+      .beforeClosed()
+      .pipe(map((result) => (result ? result : false)));
   }
 }

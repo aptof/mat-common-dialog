@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { AptofMatCommonDialogService } from 'mat-common-dialog';
+import {
+  AptofMatCommonDialogService,
+  AptofSelectOneOption,
+} from 'mat-common-dialog';
 
 @Component({
   selector: 'app-root',
@@ -43,6 +46,17 @@ export class AppComponent {
   enterText() {
     this.dialogService
       .enterText('Enter your name', 'John Doe')
+      .subscribe((result) => (this.message = result));
+  }
+
+  selectOne() {
+    let options: AptofSelectOneOption[] = [
+      { value: 10001, face: 'Cake' },
+      { value: 10005, face: 'Pizza' },
+      { value: 10007, face: 'Burger' },
+    ];
+    this.dialogService
+      .selectOne('Order one food', options, 10005)
       .subscribe((result) => (this.message = result));
   }
 }
