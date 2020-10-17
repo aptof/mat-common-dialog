@@ -20,7 +20,7 @@ You should use this library if and only if you are using `Angular material compo
 
 #### For existing angular project.
 
-1. Open terminal or cmd and add angular materila component skip if already added.
+1. Open terminal or cmd and add angular material component skip if already added.
 
 >ng add @angular/material
 >
@@ -29,8 +29,8 @@ You should use this library if and only if you are using `Angular material compo
 >npm i @aptof/mat-common-dialog
 
 
-#### For non-existing angular projcet
-1. Open terminal or cmd and Creat a new Angular project
+#### For non-existing angular project
+1. Open terminal or cmd and Create a new Angular project
 >ng new example-project
 
 >cd example-project
@@ -39,18 +39,27 @@ You should use this library if and only if you are using `Angular material compo
 
 ## Release Notes
 
+
+#### V 1.0.0
+**Breaking Changes**
+1. notify renamed to warn
+
+**Non-breaking changes**
+1. Updated to Angular 10
+2. Added new dialog = YesNoCancel
+
 #### V 0.2.2
 **Breaking Changes**
 1. chooseOne renamed to selectOne
 
 **Non-breaking changes**
 
-2. Added prefilledText in enterText
-3. Added prefilledNumber in enterNumber
+2. Added preFilledText in enterText
+3. Added preFilledNumber in enterNumber
 4. Added selectedOption in chooseOne
 
 #### V 0.2.1
-1. notify now return only true insted of buttonText
+1. notify now return only true instead of buttonText
 2. confirm now return true or false instead of 'Yes' or 'No'
 
 #### V 0.2.0
@@ -89,14 +98,14 @@ import {AptofMatCommonDialogService} from '@aptof/mat-common-dialog';
   ...
 })
 export class ExampleComponent {
-  constructor(private matSrvice: AptofMatCommonDialogService){}
+  constructor(private dialogService: AptofMatCommonDialogService){}
 
   warnClicked(){
-    this.matSrvice.warn("You are notified for your fault. Be careful next time").subscribe((result)=>console.log(result));
+    this.dialogService.warn("You are notified for your fault. Be careful next time").subscribe((result)=>console.log(result));
   }
 
   confirmClicked(){
-    this.matSrvice.confirm("Are you sure to logout?", 'Confirm?').subscribe((result)=>console.log(result));
+    this.dialogService.confirm("Are you sure to logout?", 'Confirm?').subscribe((result)=>console.log(result));
   }
 }
 ```
@@ -110,11 +119,15 @@ export class ExampleComponent {
 
 ## API
 
-The **ApotfMatCommonDialogService** exposes two funtions
+The **AptofMatCommonDialogService** exposes two functions
 
 #### notify
 ```typescript
-notify(message: string, title:string = 'Notification', buttonText:string = 'Ok'): Observable<boolean>
+warn(
+    message: string,
+    title:string = 'Notification',
+    buttonText:string = 'Ok'
+  ): Observable<boolean>
 ```
 `message: The message of the dialog.`
 
@@ -126,34 +139,59 @@ notify(message: string, title:string = 'Notification', buttonText:string = 'Ok')
 
 #### confirm
 ```typescript
-confirm(message: string, title:string = 'Confirm', warnYes:boolean = false):Observable<boolean>
+confirm(
+    message: string,
+    title:string = 'Confirm',
+    warnYes:boolean = false
+  ):Observable<boolean>
 ```
 `message: The message of the dialog.`
 
 `title: The title of the dialog.`
 
 `warnYes: By default 'No' button will be warn color but if you provide warnYes to true the 'Yes' button will be warn color.`
-![Confirmation_Alternate](https://raw.githubusercontent.com/aptof/mat-common-dialog/master/images/confirm_alternate.png)
 
 >**Note**: In confirm there is no buttonText as it always shows Yes and No button.
 
 `return: It will return true if you click 'Yes' button and false if you click 'No' button.`
->**Note**: The material dialog can be closed by clicking outside of the dialog in that case `confirm` will return 'No'.
+>**Note**: The material dialog can be closed by clicking outside of the dialog in that case `confirm` will return false.
+
+
+#### yesNoCancel
+```typescript
+yesNoCancel(
+    message: string,
+    title: string = 'Save',
+    warnYes: boolean = false
+  ): Observable<string>
+```
 
 
 #### enterText
 ```typescript
-enterText(title:string = "Enter text", prefilledText: string = ''):Observable<string>
+enterText(
+    title:string = "Enter text",
+    preFilledText: string = ''
+  ):Observable<string>
 ```
 
 #### enterNumber
 ```typescript
-enterNumber(title:string = "Enter number", min:number = 0, max:number = 50000000, prefilledNumber: number = 0):Observable<number>
+enterNumber(
+    title:string = "Enter number",
+    min:number = null,
+    max:number = null,
+    preFilledNumber: number = null
+  ):Observable<number>
 ```
 
 #### chooseOne
 ```typescript
-selectOne(title:string = 'Choose One', options: AptofChooseOneOption[] = [], selectedValue:any = ''):Observable<any>
+selectOne(
+    title:string = 'Select One',
+    options: AptofChooseOneOption[] = [],
+    selectedValue:any = ''
+  ):Observable<any>
 
 interface AptofChooseOneOption {
   value: any;  //this will be returned
