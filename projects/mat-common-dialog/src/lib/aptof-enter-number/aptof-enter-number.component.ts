@@ -9,7 +9,7 @@ import { AptofNumberData } from '../models';
   styleUrls: ['./aptof-enter-number.component.css'],
 })
 export class AptofEnterNumberComponent implements OnInit {
-  text = new FormControl(this.data.prefilledNumber, [
+  text = new FormControl(this.data.preFilledNumber, [
     Validators.required,
     Validators.min(this.data.min),
     Validators.max(this.data.max),
@@ -21,23 +21,23 @@ export class AptofEnterNumberComponent implements OnInit {
   ) {
     if (this.data.max == null) {
       if (this.data.min == null) {
-        this.text = new FormControl(this.data.prefilledNumber, [
+        this.text = new FormControl(this.data.preFilledNumber, [
           Validators.required,
         ]);
       } else {
-        this.text = new FormControl(this.data.prefilledNumber, [
+        this.text = new FormControl(this.data.preFilledNumber, [
           Validators.required,
           Validators.min(this.data.min),
         ]);
       }
     } else {
       if (this.data.min == null) {
-        this.text = new FormControl(this.data.prefilledNumber, [
+        this.text = new FormControl(this.data.preFilledNumber, [
           Validators.required,
           Validators.max(this.data.max),
         ]);
       } else {
-        this.text = new FormControl(this.data.prefilledNumber, [
+        this.text = new FormControl(this.data.preFilledNumber, [
           Validators.required,
           Validators.min(this.data.min),
           Validators.max(this.data.max),

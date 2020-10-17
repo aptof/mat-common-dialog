@@ -16,5 +16,10 @@ export interface AptofNumberData {
   title: string;
   min: number;
   max: number;
-  prefilledNumber: number;
+  preFilledNumber: number;
+}
+
+export interface AptofTextData{
+  title: string;
+  preFilledText: string;
 }

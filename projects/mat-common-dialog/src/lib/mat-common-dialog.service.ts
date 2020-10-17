@@ -7,6 +7,7 @@ import { AptofWarnComponent } from './aptof-warn/aptof-warn.component';
 import { AptofConfirmComponent } from './aptof-confirm/aptof-confirm.component';
 import { AptofYesNoCancelComponent } from './aptof-yes-no-cancel/aptof-yes-no-cancel.component';
 import { AptofEnterNumberComponent } from './aptof-enter-number/aptof-enter-number.component';
+import { AptofEnterTextComponent } from './aptof-enter-text/aptof-enter-text.component';
 
 @Injectable({
   providedIn: 'root',
@@ -59,11 +60,24 @@ export class AptofMatCommonDialogService {
     title: string = 'Enter number',
     min: number = null,
     max: number = null,
-    prefilledNumber: number = null
+    preFilledNumber: number = null
   ): Observable<number> {
     const dialogRef = this.dialog.open(AptofEnterNumberComponent, {
       width: APTOF_WIDTH,
-      data: { title, min, max, prefilledNumber },
+      data: { title, min, max, preFilledNumber },
+    });
+    return dialogRef
+      .beforeClosed()
+      .pipe(map((result) => (result ? result : '')));
+  }
+
+  enterText(
+    title: string = 'Enter text',
+    preFilledText: string = ''
+  ): Observable<string> {
+    const dialogRef = this.dialog.open(AptofEnterTextComponent, {
+      width: APTOF_WIDTH,
+      data: { title, preFilledText },
     });
     return dialogRef
       .beforeClosed()

@@ -39,4 +39,10 @@ export class AppComponent {
       .enterNumber('Enter your mobile', 5000000000)
       .subscribe((result) => (this.message = result.toString()));
   }
+
+  enterText() {
+    this.dialogService
+      .enterText('Enter your name', 'John Doe')
+      .subscribe((result) => (this.message = result));
+  }
 }

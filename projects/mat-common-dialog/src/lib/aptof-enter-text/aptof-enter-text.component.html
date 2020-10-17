@@ -2,13 +2,13 @@
 <div mat-dialog-content>
   <mat-form-field style="width: 100%">
     <input
-      type="number"
+      type="text"
       matInput
       [placeholder]="data.title"
       [formControl]="text"
       required
     />
-    <mat-error>{{ errorMessage() }}</mat-error>
+    <mat-error>Required</mat-error>
   </mat-form-field>
 </div>
 <div mat-dialog-actions class="aptof-dialog-actions">

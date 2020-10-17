@@ -8,6 +8,7 @@ import { AptofWarnComponent } from './aptof-warn/aptof-warn.component';
 import { AptofConfirmComponent } from './aptof-confirm/aptof-confirm.component';
 import { AptofYesNoCancelComponent } from './aptof-yes-no-cancel/aptof-yes-no-cancel.component';
 import { AptofEnterNumberComponent } from './aptof-enter-number/aptof-enter-number.component';
+import { AptofEnterTextComponent } from './aptof-enter-text/aptof-enter-text.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AptofEnterNumberComponent } from './aptof-enter-number/aptof-enter-numb
     AptofConfirmComponent,
     AptofYesNoCancelComponent,
     AptofEnterNumberComponent,
+    AptofEnterTextComponent,
   ],
   imports: [
     ReactiveFormsModule,
