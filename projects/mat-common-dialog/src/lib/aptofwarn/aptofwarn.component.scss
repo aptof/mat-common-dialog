@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.action {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: gray;
+}
