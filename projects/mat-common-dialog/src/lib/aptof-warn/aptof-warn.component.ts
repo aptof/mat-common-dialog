@@ -4,8 +4,8 @@ import { AptofWarnData } from '../models';
 
 @Component({
   selector: 'aptof-warn',
-  templateUrl: './aptofwarn.component.html',
-  styleUrls: ['./aptofwarn.component.css'],
+  templateUrl: './aptof-warn.component.html',
+  styleUrls: ['./aptof-warn.component.css'],
 })
 export class AptofWarnComponent implements OnInit {
   constructor(

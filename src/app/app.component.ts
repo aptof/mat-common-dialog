@@ -14,7 +14,17 @@ export class AppComponent {
 
   warn() {
     this.dialogService
-      .warn('If you exit now the items will not be saved', 'Before you go', 'Understood')
+      .warn(
+        'If you exit now the items will not be saved',
+        'Before you go',
+        'Understood'
+      )
+      .subscribe((result) => (this.message = result.toString()));
+  }
+
+  confirm() {
+    this.dialogService
+      .confirm('Are you sure to logout?')
       .subscribe((result) => (this.message = result.toString()));
   }
 }

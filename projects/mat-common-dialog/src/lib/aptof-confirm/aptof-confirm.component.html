@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <p>
+    {{ data.message }}
+  </p>
+</div>
+<div mat-dialog-actions class="aptof-dialog-actions"> 
+  <button
+    mat-raised-button
+    [color]="data.warnYes ? 'warn' : 'primary'"
+    mat-dialog-close="Yes"
+    cdkFocusInitial
+  >
+    Yes
+  </button>
+  <button
+    mat-raised-button
+    [color]="data.warnYes ? 'primary' : 'warn'"
+    mat-dialog-close="No"
+  >
+    No
+  </button>
+</div>
