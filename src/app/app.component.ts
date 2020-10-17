@@ -27,4 +27,16 @@ export class AppComponent {
       .confirm('Are you sure to logout?')
       .subscribe((result) => (this.message = result.toString()));
   }
+
+  yesNoCancel() {
+    this.dialogService
+      .yesNoCancel('Do you want to save?')
+      .subscribe((result) => (this.message = result));
+  }
+
+  enterNumber() {
+    this.dialogService
+      .enterNumber('Enter your mobile', 5000000000)
+      .subscribe((result) => (this.message = result.toString()));
+  }
 }
