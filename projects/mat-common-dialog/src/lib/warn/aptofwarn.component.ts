@@ -1,11 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AptofWarnData } from '../models';
+import { AptofWarnData } from '../data';
 
 @Component({
   selector: 'aptof-warn',
   templateUrl: './aptofwarn.component.html',
-  styleUrls: ['./aptofwarn.component.scss'],
+  styleUrls: ['./aptofwarn.component.css'],
 })
 export class AptofWarnComponent implements OnInit {
   constructor(

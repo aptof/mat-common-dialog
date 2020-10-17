@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { mapTo, map } from 'rxjs/operators';
-import { AptofWarnComponent } from './aptofwarn/aptofwarn.component';
-import { APTOF_WIDTH } from './models';
+import { APTOF_WIDTH } from './data';
+import { AptofWarnComponent } from './warn/aptofwarn.component';
 
 @Injectable({
   providedIn: 'root'

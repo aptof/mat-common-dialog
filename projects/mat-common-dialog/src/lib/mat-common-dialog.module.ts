@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { AptofWarnComponent } from './aptofwarn/aptofwarn.component';
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { AptofWarnComponent } from './warn/aptofwarn.component';
 
 @NgModule({
   declarations: [AptofWarnComponent],
-  imports: [
-    MatDialogModule,
-    MatButtonModule
-  ],
-  exports: []
+  imports: [MatDialogModule, MatButtonModule],
+  exports: [],
 })
-export class AptofMatCommonDialogModule { }
+export class AptofMatCommonDialogModule {}
