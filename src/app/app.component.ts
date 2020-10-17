@@ -14,7 +14,7 @@ export class AppComponent {
 
   warn() {
     this.dialogService
-      .warn('If you exit now the items will not be saved')
+      .warn('If you exit now the items will not be saved', 'Before you go', 'Understood')
       .subscribe((result) => (this.message = result.toString()));
   }
 }

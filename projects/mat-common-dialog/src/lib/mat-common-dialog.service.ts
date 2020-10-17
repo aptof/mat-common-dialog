@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { mapTo, map } from 'rxjs/operators';
-import { APTOF_WIDTH } from './data';
+import { APTOF_WIDTH } from './models';
 import { AptofWarnComponent } from './warn/aptofwarn.component';
 
 @Injectable({

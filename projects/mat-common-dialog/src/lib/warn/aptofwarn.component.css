@@ -1,10 +1,4 @@
-.title {
-  display: flex;
-  align-items: center;
-}
-
-.action {
+.aptof-dialog-actions {
   display: flex;
   flex-direction: row-reverse;
-  background-color: gray;
 }

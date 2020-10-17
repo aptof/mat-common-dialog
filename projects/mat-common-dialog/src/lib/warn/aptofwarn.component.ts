@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AptofWarnData } from '../data';
+import { AptofWarnData } from '../models';
 
 @Component({
   selector: 'aptof-warn',
